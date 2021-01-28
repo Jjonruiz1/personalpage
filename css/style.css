@@ -1,0 +1,259 @@
+:root {
+  --MainColor: #253174;
+  --mainColorActive: #3348c3;
+  --shadow: 0 0 9px #00000069;
+  --bgColor: #ececec;
+  --textColor: #222222;
+  --viewport: 320px;
+}
+/* General Defaults */
+body {
+  background: var(--bgColor);
+  color: var(--textColor);
+  font-family: 'Monsterrat', sans-serif;
+}
+a {
+  text-decoration: none;
+  font-size: large;
+  color: var(--textColor);
+}
+h1{
+  font-size: x-large;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+div.wrapper {
+  width: var(--viewport);
+  margin: 0 auto;
+}
+
+/****************************
+*********** Header **********
+****************************/
+
+header {
+  width: 100%;
+  height: 113px;
+  position: fixed;
+  top: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  background: var(--bgColor);
+  box-shadow: var(--shadow);
+}
+header > div.wrapper > a {
+  display: flex;
+  align-items: center;
+}
+header > div.wrapper > a > img {
+  width: 45px;
+  height: 45px;
+  margin: 12px 12px;
+  margin-left: 0;
+}
+header > div.wrapper {
+  width: var(--viewport);
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+}
+header h1 {
+  margin: 3% 0;
+  margin-bottom: 0;
+  /* font-size: medium; */
+}
+header h2 {
+  margin: 1% 0;
+  font-family: 'Monsterrat', sans-serif;
+  font-size: small;
+  color: var(--MainColor)
+}
+/****************************
+********* Navigation ********
+****************************/
+
+nav {
+  margin: 0;
+}
+nav > ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px;
+}
+nav ul li a {
+  padding: 6px;
+  border-radius: 12px;
+  background: linear-gradient(to right, transparent 50%, var(--MainColor) 50%);
+  background-size: 200%;
+  background-position: 0, 0;
+  transition: 0s;
+  font-family: 'Monsterrat', sans-serif;
+}
+nav ul li a.current {
+  color: var(--MainColor);
+}
+
+/****************************
+******* Main Content ********
+****************************/
+main {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 143px;
+  margin-bottom: 96px;
+  overflow: hidden;
+  font-family: 'Monsterrat', sans-serif;
+}
+main > div.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+/* Section */
+main > div > section {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1%;
+}
+main > div > section > a:first-of-type > img,
+main > div > section > img:first-of-type {
+  width: 100%;
+}
+/*Emphasized Text*/
+main > div > section span {
+  font-weight: bold;
+  color: var(--mainColorActive);
+}
+main  h2 {
+  font-family: 'Monsterrat', sans-serif;
+  font-size: 36px;
+  color: var(--MainColor);
+}
+main > div > section li {
+  margin-bottom: 2%;
+}
+/*Article*/
+main > div > section > article {
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+  padding-bottom: 32px;
+}
+main > div > section > article > img {
+  width: 100%;
+}
+main > div > section > article > div.tri {
+  display: flex;
+  justify-content: space-between;
+}
+main > div > section > article > div.tri > img {
+  margin-top: 12px;
+  width: 32%;
+}
+main > div > section > article > img:nth-child(3),
+main > div > section > article > img:nth-child(4) {
+  display: none;
+}
+main > div > section > article > :first-child,
+main > div > section > article > p {
+  width: 100%;
+  margin: 1.1%;
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+main button {
+  background: var(--MainColor);
+  padding: 12px;
+  border: none;
+  border-radius: 32px;
+  margin-left: 1.1%;
+  box-shadow: var(--shadow);
+  color: var(--bgColor);
+}
+main button:hover {
+  color: white;
+}
+main button:focus {
+  outline: none;
+}
+main button:active {
+  background: var(--mainColorActive);
+  font-weight: bold;
+  outline: none;
+  border: none;
+}
+/****************************
+********* Footer ************
+****************************/
+footer {
+  display: flex;
+  width: 100%;
+  height: 45px;
+  align-items: center;
+  background: var(--bgColor);
+  box-shadow: var(--shadow);
+}
+footer span {
+  display: none;
+}
+footer i {
+  font-size: 48px;
+  margin-right: 12px;
+}
+i.fa-linkedin {
+  color: #0e76a8;
+}
+
+@media screen and (min-width: 769px){
+  :root {
+    --viewport: 769px;
+  }
+  /****************************
+********* Header ************
+****************************/
+
+  header h2 {
+    margin: 1% 0;
+    font-size: large;
+  }
+  header > div.wrapper {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header {
+    height: 79px;
+  }
+  header h2 {
+    margin: 1% 0;
+    font-size:small;
+  }
+  nav {
+    width: 60%;
+  }
+
+  footer {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    justify-content: center;
+  }
+  footer > div.wrapper {
+    display: flex;
+    bottom: 0;
+    justify-content: center;
+  }
+  footer > div.wrapper > a:last-of-type {
+    right: 12px;
+    bottom: 32px;
+  }
+}
+@media screen and (min-width: 769px) and (orientation:landscape){
+  footer{
+    position:static;
+  }
+}
